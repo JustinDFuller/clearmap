@@ -1,5 +1,8 @@
 # clearmap
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/justindfuller/clearmap.svg)](https://pkg.go.dev/github.com/justindfuller/clearmap)
+[![Go Report Card](https://goreportcard.com/badge/github.com/justindfuller/clearmap)](https://goreportcard.com/report/github.com/justindfuller/clearmap)
+
 The `clearmap` package clears maps.
 
 ## Install
