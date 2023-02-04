@@ -1,5 +1,20 @@
+// package clearmap implements a utility for clearing maps of zero, empty, and nil values.
 package clearmap
 
+// Clear clears maps of all zero, empty, and nil values.
+// If the resulting map is empty, nil is returned.
+//
+// # Supported Types
+//
+// - Ints (int64, int32, int16, int8, int)
+// - Uints (uint64, uint32, uint16, uint8, uint)
+// - Strings (string, rune, byte)
+// - Booleans
+// - Iterable types (maps, arrays)
+//
+// It will work recursively on maps and slice types.
+//
+// Changes are made in-place but the map is returned for convenience.
 func Clear(m map[string]interface{}) map[string]interface{} {
 	for key, val := range m {
 		if val == nil {
