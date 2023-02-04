@@ -8,7 +8,7 @@ Run `go get github.com/justindfuller/clearmap` to add it to your package.
 
 ## Usage
 
-To clear a map of all Zero values, including:
+Use `clearmap.Clear` to clear a map of all [zero](https://go.dev/tour/basics/12), [empty](https://go.dev/tour/moretypes/11), and [nil](https://go.dev/tour/moretypes/12) values, including:
 
 * Zeroes
 * Empty Strings 
@@ -16,8 +16,6 @@ To clear a map of all Zero values, including:
 * Empty Arrays
 * Empty Maps
 * Nil values
-
-You can use `clearmap.Clear`.
 
 ```go
 func main() {
