@@ -27,9 +27,8 @@ func main() {
     "bool": false,
   }
 
-  clearmap.Clear(myMap)
-
-  fmt.Println(myMap) // nil
+  fmt.Println(clearmap.Clear(myMap)) // nil
+  fmt.Println(myMap) // map[string]interface{}{}
 }
 ``` 
 
