@@ -8,8 +8,20 @@ func Clear(m map[string]interface{}) map[string]interface{} {
 		}
 
 		switch v := val.(type) {
-		case int64, int32, int:
-			if v == 0 {
+		case complex64, complex128:
+			if v == complex(0, 0) {
+				delete(m, key)
+			}
+		case uint8, uint16, uint32, uint64, uint, uintptr:
+			if v == 0 || v == byte(0) {
+				delete(m, key)
+			}
+		case int64, int32, int16, int8, int:
+			if v == 0 || v == rune(0) || v == complex(0, 0) {
+				delete(m, key)
+			}
+		case float32, float64:
+			if v == 0.0 {
 				delete(m, key)
 			}
 		case string:
