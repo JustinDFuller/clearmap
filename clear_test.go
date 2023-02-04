@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func TestZeroes(t *testing.T) {
+func TestClear(t *testing.T) {
 	tests := []struct {
 		name   string
 		input  map[string]interface{}
@@ -123,11 +123,20 @@ func TestZeroes(t *testing.T) {
 			},
 			output: nil,
 		},
+		{
+			name: "empties",
+			input: map[string]interface{}{
+				"empty_map":   map[string]interface{}{},
+				"empty_array": []map[string]interface{}{},
+				"nil":         nil,
+			},
+			output: nil,
+		},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			if diff := cmp.Diff(test.output, Zeroes(test.input)); diff != "" {
+			if diff := cmp.Diff(test.output, Clear(test.input)); diff != "" {
 				t.Errorf("(- want, + got):\n %s", diff)
 			}
 		})
